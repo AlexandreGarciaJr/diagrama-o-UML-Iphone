@@ -1,0 +1,65 @@
+@startuml Iphone
+---
+config:
+  theme: forest
+---
+classDiagram
+    class Dispositivo {
+        <<interface>>
+        +ligar()
+        +desligar()
+    }
+    Dispositivo <|-- ReprodutorMusical
+    Dispositivo <|-- AparelhoTelefonico
+    Dispositivo <|-- NavegadorInternet
+    class ReprodutorMusical {
+        -String estadoReproducao
+        -String musicaAtual
+        +tocar()
+        +pausar()
+        +selecionarMusica(String musica)
+        +getEstadoReproducao() String
+    }
+    class AparelhoTelefonico {
+        -boolean chamadaAtiva
+        -String numeroAtual
+        +ligar(String numero)
+        +atender()
+        +iniciarCorreioVoz()
+        +getStatusChamada() boolean
+    }
+    class NavegadorInternet {
+        -List<String> abasAbertas
+        -String paginaAtual
+        +exibirPagina(String url)
+        +adicionarNovaAba()
+        +atualizarPagina()
+        +getPaginaAtual() String
+        +getAbasAbertas() List<String>
+    }
+    class Usuario {
+        -String nome
+        -String email
+        +interagirComDispositivo(Dispositivo dispositivo)
+    }
+    Usuario --> Dispositivo : usa
+    class BibliotecaMusical {
+        -List<String> musicas
+        +adicionarMusica(String musica)
+        +removerMusica(String musica)
+        +listarMusicas() List<String>
+    }
+    ReprodutorMusical --> BibliotecaMusical : possui
+    class CorreioVoz {
+        -List<String> mensagens
+        +gravarMensagem(String mensagem)
+        +reproduzirMensagem()
+    }
+    AparelhoTelefonico --> CorreioVoz : utiliza
+    class SistemaRede {
+        -String statusConexao
+        +conectar(String url)
+        +desconectar()
+        +getStatusConexao() String
+    }
+    NavegadorInternet --> SistemaRede : acessa
