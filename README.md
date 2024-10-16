@@ -11,11 +11,11 @@ Este é um diagrama UML representando toda a estrutura de uma aplicação de um 
 
 ## Como Visualizar o Diagrama
 
-Para visualizar o diagrama UML, você pode copiar o código PlantUML e colá-lo em um editor compatível com PlantUML ou usar uma ferramenta online de renderização de PlantUML.
+Para visualizar o diagrama UML, você pode copiar o código iphone.puml e colá-lo em um editor compatível com UML ou usar uma ferramenta online de renderização de UML.
 
 Exemplo de uso com a ferramenta PlantUML Online:
 1. Abra um visualizador UML.
-2. Cole o código PlantUML na área de texto.
+2. Cole o código iphone.puml na área de texto.
 3. Reproduza o código.
 
 Lembre-se de que este é apenas um diagrama de classe de exemplo e pode ser personalizado e estendido para atender às necessidades específicas do seu projeto.
